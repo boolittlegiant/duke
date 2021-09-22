@@ -2,7 +2,7 @@ public class MarkasDone_Level3 {
     protected String list;
     protected boolean isDone;
 
-    public MarkasDone_Level3(String list){
+    public Task(String list){
         this.list = list;
         this.isDone = false;
     }
@@ -19,9 +19,4 @@ public class MarkasDone_Level3 {
     public String toString(){
         return ("["+ getStatus() + "] " + list);
     }
-
-    MarkasDone_Level3 t = new MarkasDone_Level3("read book");
-    //t.markAsDone();
-    System.out.println(t.markAsDone());
-
 }
