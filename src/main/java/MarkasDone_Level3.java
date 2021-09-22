@@ -1,9 +1,9 @@
-public abstract class MarkasDone_Level3 {
-    protected String task;
+public class MarkasDone_Level3 {
+    protected String list;
     protected boolean isDone;
 
-    public Task(String task){
-        this.task = task;
+    public MarkasDone_Level3(String list){
+        this.list = list;
         this.isDone = false;
     }
 
@@ -15,17 +15,12 @@ public abstract class MarkasDone_Level3 {
         this.isDone = true;
     }
 
-    public abstract String toString(){
-        return  ("["+ getStatus() + "] " + getTask());
+    //Override
+    public String toString(){
+        return ("["+ getStatus() + "] " + list);
     }
 
-    /*public String getTask(){
-        return this.task;
-    }
-
-    @Override
-    public String toString() {
-        return ("["+ getStatus() + "] " + getTask());
-    }*/
+    MarkasDone_Level3 t = new MarkasDone_Level3("read book");
+    //t.markAsDone();
 
 }
