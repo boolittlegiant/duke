@@ -10,7 +10,7 @@ public class Duke {
                 + "|  _  | | | | | | |\n"
                 + "| |_| | |_| | |_| |\n"
                 + "|____/ \\____|\\____|\n";
-        System.out.println(logo + "Hello I'm Boo.");
+        System.out.println(logo + "Welcome I'm Boo.");
         System.out.println("What can I do for you?\n");
 
         String line;
@@ -35,5 +35,4 @@ public class Duke {
             }
         }
     }
-
 }
