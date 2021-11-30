@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ import java.util.Scanner;
 @SuppressWarnings("Duplicates")
 public class Storage {
 
-    private String filePath = "data/tasks.txt";
+    private String filePath = "/data/tasks.txt";
 
     public Storage(String filePath) {
         this.filePath = filePath;
@@ -87,7 +89,12 @@ public class Storage {
     public void save(List<Task> tasks) {
         try {
             FileWriter fw = new FileWriter(this.filePath);
-
+            if (Files.isDirectory(Paths.get("/data"))) {
+                System.out.println("dir exists");
+            } else {
+                Files.createDirectories(Paths.get("/data"));
+                System.out.println("dir did not exist");
+            }
             File f = new File(this.filePath); // create a File for the given file path
             Scanner s = new Scanner(f); // create a Scanner using the File as the source
             for (Task task : tasks) {
